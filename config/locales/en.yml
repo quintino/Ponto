@@ -1,0 +1,121 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  user:
+    title:
+      new: "New user"
+      edit: "Edit user"
+      login: "Access"
+    attribute:
+      username: "Username"
+      password: "Password"
+      confirmation: "Confirmation"
+      email: "Email"
+      name: "Name"
+      daily: "Daily work time"
+    error:
+      name: "error"
+      detail: "prohibited this user from being saved"
+    button:
+      save: "Save"
+      login: "Access"
+    message:
+      register: "Registration successfully."
+      updated: "User was successfully updated."
+  application:
+    message:
+      login: "Login Successful"
+      wrong: "There was an error accessing, the possibility of incorrect password or user does not exist."
+      logout: "Goodbye!"
+      confirm: "Do you really want to record the point?"
+    button:
+      back: "Back"
+    label:
+      register: "Register"
+      login: "Login"
+      logout: "Logout"
+      profile: "Edit profile"
+      manual: "Manual point"
+      automatic: "Point register"
+      list: "Month points"
+      total: "Total time"
+      holidays: "Holidays"
+  welcome:
+    title:
+      page: "Point System"
+    content:
+      message: "For full access to the system for making access to it."
+      login: "Welcome to online point system, %{name}."
+  point:
+    title:
+      getdate: "Set a desired date"
+      selectdate: "Point data"
+      register: "Automatic point register"
+      getmonth: "Set a desired year and month"
+      selectmonth: "Point data"
+      getyear: "Set a desired year"
+      selectyear: "Point data"
+    label:
+      months: "Months"
+      hours: "Worked hours"
+      minutes: "Minutes"
+      date: "Date"
+      morning: "Morning"
+      afternoon: "Afternoon"
+      evening: "Evening"
+      difference: "Difference"
+      entry: "Entry"
+      exit: "Exit"
+      obs: "OBS"
+      weekday: "Week day"
+      and: " and "
+      manual: "Handbook"
+      workday: "Work days"
+      hourday: "Work hours"
+    button:
+      continue: "Continue"
+      register: "Register"
+    attribute:
+      date: "Date"
+      enter: "Enter [%{name}]"
+      exit: "Exit [%{name}]"
+      morning: "morning"
+      afternoon: "afternoon"
+      overnight: "overnight"
+    message:
+      manual: "Manual point %{name} successfully."
+      saved: "saved"
+      updated: "updated"
+      register: "Point registered succesfully!"
+      date: "Record date: %{date}"
+      time: "Record time (%{name}): %{time}"
+      blocked: "The point can not be registered because it has been registered manually."
+    error:
+      name: "error"
+      detail: "prohibited this user from being saved"
+  holiday:
+    title:
+      list: "National holidays (%{year})"
+      new: "New holiday"
+      edit: "Edit holiday"
+    label:
+      day: "Day"
+      month: "Month"
+      name: "Name"
+      user: "User"
+    button:
+      new: "New holiday"
+      edit: "Edit"
+      remove: "Remove"
+      save: "Save"
+    error:
+      name: "error"
+      detail: "prohibited this user from being saved"
+    dynamic:
+      corpus: "Corpus Christi"
+      carnival: "Carnival"
+      easter: "Easter"
+    message:
+      question: "Are you sure?"
+      dynamic: "Dynamic holidays"

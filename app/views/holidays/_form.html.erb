@@ -1,0 +1,36 @@
+<%= form_for(@holiday) do |f| %>
+  <% if @holiday.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@holiday.errors.count, t('holiday.error.name')) %> <%= t('holiday.error.detail') %>:</h2>
+
+      <ul>
+      <% @holiday.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label t('holiday.label.day') %><br />
+    <%= f.text_field :day %>
+  </div>
+  <div class="field">
+    <%= f.label t('holiday.label.month') %><br />
+    <%= f.text_field :month %>
+  </div>
+  <div class="field">
+    <%= f.label t('holiday.label.name') %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <p/>
+    <div style="float: left;">
+      <%= f.submit t('holiday.button.save') %>
+    </div>
+    <div style="padding-left: 10px; float: left; padding-top: 5px;">
+      <%= link_to t('application.button.back'), root_url %>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+<% end %>

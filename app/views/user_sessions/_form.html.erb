@@ -1,0 +1,32 @@
+<%= form_for(@user_session) do |f| %>
+  <% if @user_session.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, t('user.error.name')) %> <%= t('user.error.detail') %>:</h2>
+
+      <ul>
+      <% @user_session.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label t('user.attribute.username') %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label t('user.attribute.password') %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="actions">
+    <p/>
+    <div style="float: left;">
+      <%= f.submit t('user.button.login') %>
+    </div>
+    <div style="padding-left: 10px; float: left; padding-top: 5px;">
+      <%= link_to t('application.button.back'), root_path %>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+<% end %>

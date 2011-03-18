@@ -1,0 +1,24 @@
+<h3><%= t('point.title.selectyear') %></h3>
+
+<table>
+<thead>
+  <tr>
+    <th><%= t('point.label.months') %></th>
+    <th><%= t('point.label.workday') %></th>
+    <th><%= t('point.label.hourday') %></th>
+    <th><%= t('point.label.hours') %></th>
+    <th><%= t('point.label.difference') %></th>
+  </tr>
+</thead>
+<tbody>
+  <% @months.each do |month| %>
+  <tr>
+    <td><%= t('date.month_names')[month.month] %></td>
+    <td><%= month.work_days %></td>
+    <td><%= month.hour_days.to_s << ':00' %></td>
+    <td><%= month.hours.to_s << ':' << (month.minutes < 10 ? '0' : '') << month.minutes.to_s %></td>
+    <td style="color: <%= (month.positive ? 'red' : 'green') %>"><%= month.diff %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>

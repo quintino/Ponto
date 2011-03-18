@@ -1,0 +1,28 @@
+<%= form_for(@point, :url => :selectyear) do |f| %>
+  <% if @point.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, t('point.error.name')) %> <%= t('point.error.detail') %>:</h2>
+
+      <ul>
+      <% @point.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label t('point.attribute.date') %><br />
+    <%= f.date_select :date_record, :discard_day => true, :discard_month => true %>
+  </div>
+  <div class="actions">
+    <p/>
+    <div style="float: left;">
+      <%= f.submit t('point.button.continue') %>
+    </div>
+    <div style="padding-left: 10px; float: left; padding-top: 5px;">
+      <%= link_to t('application.button.back'), root_path %>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+<% end %>

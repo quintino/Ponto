@@ -1,0 +1,38 @@
+<h3><%= t('holiday.title.list', :year => @year) %></h3>
+
+<table>
+<thead>
+  <tr>
+    <th><%= t('holiday.label.day') %></th>
+    <th><%= t('holiday.label.month') %></th>
+    <th><%= t('holiday.label.name') %></th>
+    <th><%= t('holiday.label.user') %></th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% @holidays.each do |holiday| %>
+  <tr>
+    <td><%= holiday.day %></td>
+    <td><%= holiday.month %></td>
+    <td><%= holiday.name %></td>
+    <td><%= holiday.user.name %></td>
+    <td><%= link_to t('holiday.button.edit'), edit_holiday_path(holiday) %></td>
+    <td><%= link_to t('holiday.button.remove'), holiday, :confirm => t('holiday.message.question'), :method => :delete %></td>
+  </tr>
+<% end %>
+<% @dynamics.each do |holiday| %>
+  <tr>
+    <td><%= holiday.day %></td>
+    <td><%= holiday.month %></td>
+    <td><%= holiday.name %></td>
+    <td colspan="3"><%= t('holiday.message.dynamic') %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to t('holiday.button.new'), new_holiday_path %>

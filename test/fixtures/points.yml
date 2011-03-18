@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date_record: 2011-03-15
+  morning_enter: 2011-03-15 14:48:09
+  morning_exit: 2011-03-15 14:48:09
+  afternoon_enter: 2011-03-15 14:48:09
+  afternoon_exit: 2011-03-15 14:48:09
+  overnight_enter: 2011-03-15 14:48:09
+  overnight_exit: 2011-03-15 14:48:09
+  next_time: 1
+
+two:
+  date_record: 2011-03-15
+  morning_enter: 2011-03-15 14:48:09
+  morning_exit: 2011-03-15 14:48:09
+  afternoon_enter: 2011-03-15 14:48:09
+  afternoon_exit: 2011-03-15 14:48:09
+  overnight_enter: 2011-03-15 14:48:09
+  overnight_exit: 2011-03-15 14:48:09
+  next_time: 1

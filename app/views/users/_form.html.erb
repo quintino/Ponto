@@ -1,0 +1,48 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, t('user.error.name')) %> <%= t('user.error.detail') %>:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label t('user.attribute.name') %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label t('user.attribute.username') %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label t('user.attribute.email') %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label t('user.attribute.password') %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label t('user.attribute.confirmation') %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label t('user.attribute.daily') %><br />
+    <%= f.time_select :daily_hour %>
+  </div>
+  <div class="actions">
+    <p/>
+    <div style="float: left;">
+      <%= f.submit t('user.button.save') %>
+    </div>
+    <div style="padding-left: 10px; float: left; padding-top: 5px;">
+      <%= link_to t('application.button.back'), root_url %>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+<% end %>

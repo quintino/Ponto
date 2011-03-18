@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  holiday_date: 2011-03-17
+  user_id: 1
+
+two:
+  holiday_date: 2011-03-17
+  user_id: 1

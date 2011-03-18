@@ -1,0 +1,67 @@
+<%= form_for(@point) do |f| %>
+  <% if @point.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, t('point.error.name')) %> <%= t('point.error.detail') %>:</h2>
+
+      <ul>
+      <% @point.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div id="date_record">
+    <div class="field">
+      <%= f.label t('point.attribute.date') %><br />
+      <%= f.date_select :date_record, :disabled => true %>
+      <%= f.hidden_field :date_record %>
+      <%= f.hidden_field :next_time %>
+    </div>
+  </div>
+  <p/>
+  <div id="time_records">
+    <div style="float: left; width: 200px;">
+      <div class="field">
+        <%= f.label t('point.attribute.enter', :name => t('point.attribute.morning')) %><br />
+        <%= f.time_select :morning_enter, :minute_step => 5 %>
+      </div>
+      <div class="field">
+        <%= f.label t('point.attribute.exit', :name => t('point.attribute.morning')) %><br />
+        <%= f.time_select :morning_exit, :minute_step => 5 %>
+      </div>
+    </div>
+    <div style="float: left; width: 200px;">
+      <div class="field">
+        <%= f.label t('point.attribute.enter', :name => t('point.attribute.afternoon')) %><br />
+        <%= f.time_select :afternoon_enter, :minute_step => 5 %>
+      </div>
+      <div class="field">
+        <%= f.label t('point.attribute.exit', :name => t('point.attribute.afternoon')) %><br />
+        <%= f.time_select :afternoon_exit, :minute_step => 5 %>
+      </div>
+    </div>
+    <div style="float: left; width: 200px;">
+      <div class="field">
+        <%= f.label t('point.attribute.enter', :name => t('point.attribute.overnight')) %><br />
+        <%= f.time_select :overnight_enter, :minute_step => 5 %>
+      </div>
+      <div class="field">
+        <%= f.label t('point.attribute.exit', :name => t('point.attribute.overnight')) %><br />
+        <%= f.time_select :overnight_exit, :minute_step => 5 %>
+      </div>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+  <p/>
+  <div class="actions">
+    <p/>
+    <div style="float: left;">
+      <%= f.submit t('point.button.register') %>
+    </div>
+    <div style="padding-left: 10px; float: left; padding-top: 5px;">
+      <%= link_to t('application.button.back'), root_path %>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+<% end %>

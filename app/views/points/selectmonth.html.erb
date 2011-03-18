@@ -1,0 +1,61 @@
+<h3><%= t('point.title.selectmonth') %></h3>
+
+<table>
+<thead>
+  <tr>
+    <th rowspan="2" valign="middle" align="center"><%= t('point.label.date') %></th>
+    <th rowspan="2" valign="middle" align="center"><%= t('point.label.weekday') %></th>
+    <th colspan="2" align="center"><%= t('point.label.morning') %></th>
+    <th colspan="2" align="center"><%= t('point.label.afternoon') %></th>
+    <th colspan="2" align="center"><%= t('point.label.evening') %></th>
+    <th rowspan="2" valign="middle" align="center"><%= t('point.label.difference') %></th>
+    <th rowspan="2" valign="middle" align="center"><%= t('point.label.obs') %></th>
+  </tr>
+  <tr>
+    <th><%= t('point.label.entry') %></th>
+    <th><%= t('point.label.exit') %></th>
+    <th><%= t('point.label.entry') %></th>
+    <th><%= t('point.label.exit') %></th>
+    <th><%= t('point.label.entry') %></th>
+    <th><%= t('point.label.exit') %></th>
+  </tr>
+</thead>
+<tbody>
+  <% @points.each do |point| %>
+  <%
+     if !point.holiday.empty?
+  %>
+    <tr bgcolor="#EBC79E">
+  <%
+     elsif !point.date_record.nil? && point.date_record.strftime('%w').to_i == 0
+  %>
+    <tr bgcolor="#DBDB70">
+  <%
+     elsif !point.date_record.nil? && point.date_record.strftime('%w').to_i == 6
+  %>
+    <tr bgcolor="#DBDB70">
+  <%
+     elsif !point.manual.empty?
+  %>
+    <tr bgcolor="#C0D9D9">
+  <%
+     else
+  %>
+  <tr>
+  <%
+     end
+  %>
+    <td><%= point.date_record.strftime('%d/%m/%Y') unless point.date_record.nil? %></td>
+    <td><%= t('date.day_names')[point.date_record.strftime('%w').to_i] unless point.date_record.nil? %></td>
+    <td><%= point.morning_enter.strftime('%H:%M') unless point.morning_enter.nil? %></td>
+    <td><%= point.morning_exit.strftime('%H:%M') unless point.morning_exit.nil? %></td>
+    <td><%= point.afternoon_enter.strftime('%H:%M') unless point.afternoon_enter.nil? %></td>
+    <td><%= point.afternoon_exit.strftime('%H:%M') unless point.afternoon_exit.nil? %></td>
+    <td><%= point.overnight_enter.strftime('%H:%M') unless point.overnight_enter.nil? %></td>
+    <td><%= point.overnight_exit.strftime('%H:%M') unless point.overnight_exit.nil? %></td>
+    <td style='color: <%= point.positive ? 'red' : 'green' %>'><%= point.left.strftime('%H:%M') unless point.left.nil? %></td>
+    <td><%= (point.holiday.empty? ? point.manual : point.holiday << (point.manual.empty? ? '' : t('point.label.and')) << point.manual) %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
